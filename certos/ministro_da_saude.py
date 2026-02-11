@@ -39,10 +39,12 @@ def extract_minister(soup, base_url=URL):
                 if name_p:
                     name = name_p.get_text(strip=True)
                 
-                # Use the scraped title or normalize it
+                # Use the scraped title and normalize it
                 title = cargo_p.get_text(strip=True)
-                # Cleanup title if it has " (A) "
-                title = title.replace("(A)", "").replace("  ", " ").strip()
+                # Cleanup title if it has " (A) " and normalize to title case
+                title = title.replace("(A)", "").replace("  ", " ").strip().title()
+                # Ensure "Da" and "De" are lowercase for the correct title format
+                title = title.replace(" De ", " de ").replace(" Da ", " da ").replace(" Do ", " do ")
                 
                 # Extract phones
                 phone_p = container.find("p", class_="telefone")
