@@ -1,19 +1,38 @@
-###Crie um código em Python que faça WEB SCRAPING REAL (coleta de dados).
+# Web Scraping – Coleta de Dados dos Ministros
+## Descrição do Projeto
 
-Os dados NÃO podem ser definidos manualmente.
-NÃO use valores fixos (hardcoded).
-NÃO simule dados.
+Este projeto tem como objetivo realizar web scraping para coletar informações públicas dos ministros de cada ministério do governo, extraindo automaticamente os seguintes dados:
 
-O código deve:
-1. Fazer uma requisição HTTP para o link informado
-2. Ler o HTML retornado
-3. Extrair dinamicamente do HTML APENAS os dados do MINISTRO:
-   - nome
-   - cargo (normalizar para "Ministro de Estado da Saúde",
-     mesmo que esteja "Ministra" na página)
-   - telefone
-   - e-mail
+1. Nome do Ministro
 
-Os valores só podem ser atribuídos a partir do conteúdo da página.
-Use requests e BeautifulSoup.
-Fonte única dos dados: (link)
+2. Ministério ao qual pertence
+
+3. E-mail institucional
+
+4. Telefone de contato
+
+## Tecnologias Utilizadas
+
+Python 
+
+BeautifulSoup4 
+
+## Como Funciona
+
+O script acessa o site oficial do governo, do site digitado.
+
+Identifica as páginas de cada ministério.
+
+Extrai as informações relevantes:
+
+Nome do ministro
+
+Nome do ministério
+
+Email
+
+Telefone
+
+Organiza os dados em uma estrutura tabular.
+
+Exporta os dados para um arquivo .csv.
